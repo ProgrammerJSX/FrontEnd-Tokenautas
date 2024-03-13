@@ -1,0 +1,124 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e1e; /* Adjust to match your desired background color */
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+
+
+.platforms-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #1c0c2c;
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+
+
+    /* Small screens */
+@media (min-width: 400px) {
+    .platforms-container {
+        padding-top: 150px;
+     
+       flex-wrap: nowrap;
+       padding-right: 50px;
+     
+    }
+
+
+    .flotante{
+        position: absolute;
+        border: 1px solid black;
+        top: -48px;
+        left: 0;
+        right: 0;
+        margin: auto 0;
+        width: 500px;
+    }
+
+    .platforms-header h2{
+        opacity: 1;
+    }
+}
+
+
+.flotante{
+    position: absolute;
+    border: 1px solid black;
+   
+}
+
+.platforms-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.all-platforms-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.platform-cards {
+    display: flex;
+    gap: 20px;
+    
+}
+
+.platform-card {
+    background: hsl(270, 50%, 15%);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 150px; /* Adjust width as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.platform-name h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.platform-name p {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.platform-logo {
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.chaturbate-logo {
+    background-image: url('path-to-chaturbate-logo.png');
+}
+
+/* Repeat for other platforms, using appropriate classes and images */
+
+.platform-navigation {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Add additional styling as necessary */

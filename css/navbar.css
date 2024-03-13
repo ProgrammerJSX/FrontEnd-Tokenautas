@@ -1,0 +1,48 @@
+/* Estilos para modo escritorio */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-links li {
+    padding: 5px 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Ocultar íconos en modo escritorio */
+.nav-icon-container {
+    display: none; /* Esto oculta los íconos en modo escritorio */
+}
+
+/* Estilos para tablet y móvil */
+@media (max-width: 1024px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .nav-icon-container {
+        display: flex; /* Mostrar íconos en modo móvil */
+        justify-content: center;
+        width: 100%;
+    }
+    .nav-icon-container span {
+        padding: 10px;
+    }
+    .nav-links {
+        display: none; /* Ocultar elementos <li> en modo móvil */
+    }
+}
