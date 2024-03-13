@@ -9,5 +9,20 @@
         align-items: center;
         transform: translate(-2rem, 2.4rem);
         position: relative;
-        z-index: 2;
+        z-index: 10;
+    }
+
+    @media (max-width: 399px) {
+        .main__crossing-container {
+            width: 110%;
+            margin-top: 75px;
+            margin-left: 85px;
+        }
+
+        .strip{
+            display: none;
+        }
+        .xvideos{
+            display: none;
+        }
     }

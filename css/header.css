@@ -1,0 +1,11 @@
+.usuarioHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+@media (min-width: 990px){
+    
+}

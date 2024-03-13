@@ -1,22 +1,16 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1e1e1e; /* Adjust to match your desired background color */
-    margin: 0;
-    padding: 0;
-    color: white;
-}
-
 
 
 .platforms-container {
     max-width: 1200px;
-    margin: 0 auto;
-    background: #1c0c2c;
+    margin: 0 auto; /* Centra el contenedor en el viewport */
+    background: #121619;
     padding: 2rem;
     border-radius: 10px;
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten según el ancho del contenedor */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
     position: relative;
 }
 
@@ -45,6 +39,7 @@ body {
 
     .platforms-header h2{
         opacity: 1;
+        font-size: 25px;
     }
 }
 
@@ -73,16 +68,34 @@ body {
     
 }
 
+
+
+/* Estilos para tarjetas en todos los tamaños de pantalla */
 .platform-card {
     background: hsl(270, 50%, 15%);
     border-radius: 8px;
     padding: 1rem;
-    width: 150px; /* Adjust width as needed */
+    width: 150px; /* Ajusta el ancho según sea necesario */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0 auto; /* Esto asegura que cada tarjeta se centre si no llenan todo el ancho del contenedor */
 }
+
+@media (max-width: 399px) {
+    /* Aquí puedes ajustar estilos específicos para pantallas más pequeñas */
+    .platforms-container {
+        /* Asegúrate de que el padding-top no empuje el contenido hacia abajo */
+        padding-top: 2rem;
+    }
+
+    .platform-card {
+        /* No es necesario repetir todos los estilos si son iguales fuera de la media query */
+        width: 100%; /* O un porcentaje específico para darle más espacio */
+    }
+}
+
 
 .platform-name h3 {
     margin: 0;

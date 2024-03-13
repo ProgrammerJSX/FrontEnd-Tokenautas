@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/componenteTitulo.css">
     <link rel="stylesheet" href="./css/footerReal.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/header.css">
+
     <title>Proyecto 01</title>
     <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/b036b95ef5.js" crossorigin="anonymous"></script>
@@ -18,10 +21,25 @@
 </head>
 
     
+
     
     
 <body class="grid-container">
-    <header class="header">HEADER</header>
+    <header class="header">
+
+
+        
+        <div class="logo"><img src="./imagenesAll/logos/tokenautasBlanco-02.png" width="300" alt=""></div>
+        <div class="usuarioHeader">
+            <i class="fa-solid fa-user"></i><h2>Mile</h2>
+            <span>$7777777</span>
+            <p>COP</p>
+
+
+        </div>
+
+      
+    </header>
     <nav class="navbar">
         <div class="nav-icon-container">
             <!-- Ejemplo de íconos para modo celular, reemplaza con los íconos que prefieras -->
@@ -44,8 +62,46 @@
             <li>Salir</li>
         </ul>
     </nav>
-    <aside class="sidebar">SIDEBAR</aside>
-    <article class="main">MAIN</article>
+    <aside class="sidebar"><div class="gradient-text">
+        <p>Puedes vender tus tokens, no importa a qué estudio pertenezcas o si eres independiente, también puedes recibir regalos de tus tipers aprovechando las billeteras cripto. La recepción es casi inmediata.</p>
+      </div>
+      </aside>
+
+
+<style>.gradient-text p {
+    background: -webkit-linear-gradient(left, #7b4397, #dc2430);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; /* Importante para que el gradiente solo se aplique al texto */
+    margin: 0; /* Elimina el margen por defecto de los párrafos */
+  }
+  
+  /* Asegúrate de que el gradiente sea compatible con otros navegadores */
+  .gradient-text p {
+    background: linear-gradient(to right, #7b4397, #dc2430);
+    background-clip: text;
+    color: transparent;
+  }
+  </style>
+
+
+      
+    <article class="main">
+
+        <div class="card-container">
+            <div class="card bitcoin">
+                <h2>Bitcoin</h2>
+                <p class="wallet-address">1JvBWgCgH36jDe9dTKkbrELyNzoPTE</p>
+                <button class="copy-btn">copiar</button>
+            </div>
+            <div class="card tether">
+                <h2>Tether</h2>
+                <p class="wallet-address">TyPH9rHvIe2kPySiCiofjmF7L9e2aD2</p>
+                <button class="copy-btn">copiar</button>
+            </div>
+        </div>
+
+    </article>
     <footer class="footer" style="position: relative; overflow: hidden;">
 
         <div class="platforms-container">
@@ -76,7 +132,7 @@
 
             <div class="platform-cards">
                 <!-- Repeat this structure for each platform card -->
-                <div class="platform-card">
+                <div class="platform-card strip">
                     <div class="platform-name">
                         <h3>StripChat</h3>
                         <p>stripchat.com</p>
@@ -91,7 +147,7 @@
 
             <div class="platform-cards">
                 <!-- Repeat this structure for each platform card -->
-                <div class="platform-card" style="margin-left: 20px;">
+                <div class="platform-card xvideos" style="margin-left: 20px;">
                     <div class="platform-name">
                         <h3>XvideosCams</h3>
                         <p>xvideoscams.com</p>
@@ -159,6 +215,114 @@
     </div>
     </footer>
     <!-- partial -->
+
+
+
+
+
+
+
+ <!-- START EFECTO MAQUINA DE ESCRIBIR -->
+ <style>
+  @keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: orange; }
+}
+
+.typing-effect {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid orange;
+  display: inline-block;
+  padding-right: 2px; /* Ajuste para el cursor parpadeante */
+}
+
+/* Estilo para el texto "haz click" */
+.haz-click {
+  color: #DBB78A; /* Cambia al color que combine con tu sitio */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Estilo para animar el texto "haz click" */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.haz-click-animation {
+  animation: blink 1s infinite;
+}
+
+
+ </style>
+
+<script>
+    const typingSpeed = 150; // Velocidad a la que aparecen las letras
+    const textChangeDelay = 2000; // Tiempo antes de cambiar al texto "haz click"
+    const newText = '¡haz click!';
+    const element = document.querySelector('.main__crossing-heading');
+    let isTyping = false;
+    
+    function typeText(text, callback) {
+      let i = 0;
+      element.textContent = '';
+      const typingInterval = setInterval(() => {
+        if (i < text.length) {
+          element.textContent += text.charAt(i);
+          i++;
+        } else {
+          clearInterval(typingInterval);
+          callback && callback();
+        }
+      }, typingSpeed);
+    }
+    
+    function toggleText() {
+      if (!isTyping) {
+        isTyping = true;
+        element.classList.remove('haz-click-animation');
+        typeText('VENDE TUS TOKENS', () => {
+          setTimeout(() => {
+            element.textContent = newText;
+            element.classList.add('haz-click', 'haz-click-animation');
+            isTyping = false;
+          }, textChangeDelay);
+        });
+      }
+    }
+    
+    // Iniciar animación al cargar
+    toggleText();
+    
+    // Reiniciar animación
+    setInterval(toggleText, textChangeDelay * 2 + 'VENDE TUS TOKENS'.length * typingSpeed);
+
+
+
+
+    function redirectToGoogle() {
+  window.location.href = 'https://google.com';
+}
+
+// Añade el evento de clic al elemento después de que se cargue la página
+document.addEventListener('DOMContentLoaded', () => {
+  const clickableElement = document.querySelector('.main__crossing-heading');
+  clickableElement.addEventListener('click', redirectToGoogle);
+});
+    </script>
+    
+    
+
+
+ <!-- END MAQUINA DE ESCRIBIR -->
+
+
+
 </div>
   
 </body>
