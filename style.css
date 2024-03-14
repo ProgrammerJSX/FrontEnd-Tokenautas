@@ -13,8 +13,70 @@
    
 }
 
+.flotante{
+    border: none !important;
+}
+
+
+button {
+    /* Propiedades comunes */
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+  }
+
+
+  .tether button {
+    background-color: rgba(0, 0, 0, 0.514);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 175, 149, 0.2);
+    transition: all 0.2s ease-in-out;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, rgba(0,0,0,0.75), rgba(255,255,255,0.75));
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.tether button:hover {
+    box-shadow: 0 0 15px rgba(0, 175, 149, 0.3);
+    border-image-source: linear-gradient(to right, rgba(0,0,0,0.9), rgba(255,255,255,0.9));
+}
+
+.bitcoin button {
+    background-color: rgba(0, 0, 0, 0.514);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(242, 169, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, rgba(0,0,0,0.75), rgba(255,255,255,0.75));
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.bitcoin button:hover {
+    box-shadow: 0 0 15px rgba(242, 169, 0, 0.3);
+    border-image-source: linear-gradient(to right, rgba(0,0,0,0.9), rgba(255,255,255,0.9));
+}
+
+
+  
+  button:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  
+
 h1,h2,h3,h4,h5,h6{
     font-family: 'Astronomus';
+    color: #DBB78A;
 }
 
 p,a,span{
@@ -122,6 +184,7 @@ body {
 .footerReal{
     grid-area: footerReal;
     z-index: 10;
+    background: rgb(30, 30, 30);
    
 }
 
@@ -187,7 +250,8 @@ body {
     }
 
     .navbar {
-        grid-row: 2 / span 4;
+        grid-row: 2 / span 2;
+        
     }
 
     .sidebar {
@@ -202,6 +266,9 @@ body {
         grid-row: 3 / span 1;
 
     }
+    .footerReal {
+        grid-row: 5 / span 1;
+    }
 }
 
 
@@ -215,17 +282,81 @@ body {
 
 
 
-.grid-container::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(at 20% 50%, hsla(270, 50%, 8%, .5), transparent),
-        radial-gradient(at 80% 50%, hsla(270, 50%, 8%, .6), hsla(270, 50%, 8%, .1)),
-        linear-gradient(to right bottom, hsl(270, 50%, 8%), transparent 66%),
-        linear-gradient(to bottom, transparent, hsl(270, 50%, 8%) 56%);
-    z-index: 10;
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  
+  .grid-container::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+          to bottom, 
+          #121619 0%, 
+          #121619 50%, /* Predominancia del color #121619 */
+          #b36424 60%, 
+          #dbb88c 70%, 
+          #4e2b0c 80%, 
+          #a47c51 90%, 
+          #c0bfc0 100%
+      );
+      animation: pulse 3s infinite;
+      z-index: 10;
+  }
+  
+  @media (min-width: 1367px) {
+
+
+    .grid-container {
+        grid-template-areas:
+            "header header header"
+            "navbar main sidebar"
+            "navbar footer footer"
+            "footerReal footerReal footerReal";
+        grid-template-columns: 240px 1fr 300px;
+        grid-template-rows: 200px 1fr 420px;
+    }
+
+    .header, .navbar, .sidebar, .main, .footer {
+        padding: 20px; /* Added padding for a more spacious look */
+    }
+
+    .header {
+        grid-row: 1 / span 1;
+        display: flex;
+       
+
+        .logo{
+            position: absolute;
+            align-self: center;
+        
+            width: 98%;
+        }
+    }
+
+    .navbar {
+        grid-row: 2 / span 4;
+        
+    }
+
+    .sidebar {
+        grid-row: 2 / span 1;
+    }
+
+    .main {
+        grid-row: 2 / span 1;
+    }
+
+    .footer {
+        grid-row: 3 / span 1;
+
+    }
+    .footerReal {
+        grid-row: 5 / span 1;
+    }
 }

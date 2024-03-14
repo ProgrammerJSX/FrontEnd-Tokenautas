@@ -1,0 +1,2 @@
+Color de botones y tutilos
+#DBB78A

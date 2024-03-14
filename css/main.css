@@ -94,22 +94,31 @@
     background: 
         linear-gradient(
             to right, 
-            hsla(240, 60%, 60%, 0.3) 0%, 
-            hsla(240, 70%, 60%, 0.3) 40%, 
-            hsl(240, 70%, 60%) 100%
+            hsla(43, 90%, 55%, 0.3) 0%, /* naranja claro transparente */
+            hsla(43, 90%, 55%, 0.3) 40%, /* naranja claro transparente */
+            hsl(28, 100%, 53%) 100% /* naranja sólido */
         ),
         url('../imagenesAll/fondos/bt.jpeg') no-repeat center center !important;
     background-size: cover;
-    color: #f0b90b;
+    color: #f2a900; /* Un color que se asemeja al dorado, representativo de Bitcoin */
 }
 
 
+
   
-  .tether {
-      background: url('../imagenesAll/fondos/tete.jpeg') no-repeat center center !important;
-      background-size: cover;
-      color: #50af95; /* A green color for Tether text for example, adjust as needed */
-  }
+.tether {
+  background: 
+      linear-gradient(
+          to right, 
+          hsla(160, 100%, 40%, 0.3) 0%, /* Verde claro transparente */
+          hsla(160, 100%, 40%, 0.3) 40%, /* Verde claro transparente */
+          hsl(160, 100%, 40%) 100% /* Verde sólido */
+      ),
+      url('../imagenesAll/fondos/tete.jpeg') no-repeat center center !important;
+  background-size: cover;
+  color: #50af95; /* Un tono de verde que representa a Tether */
+}
+
   
   /* Make the cards responsive */
   @media only screen and (max-width: 600px) {

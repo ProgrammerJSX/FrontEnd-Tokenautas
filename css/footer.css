@@ -70,18 +70,69 @@
 
 
 
-/* Estilos para tarjetas en todos los tamaños de pantalla */
+@keyframes brillarSombra {
+    0%, 100% {
+        box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 .platform-card {
-    background: hsl(270, 50%, 15%);
+    background: linear-gradient(to bottom, #F9E0C3, #F1A347);
     border-radius: 8px;
     padding: 1rem;
-    width: 150px; /* Ajusta el ancho según sea necesario */
+    width: 190px; /* Ajusta el ancho según sea necesario */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto; /* Esto asegura que cada tarjeta se centre si no llenan todo el ancho del contenedor */
+    animation: brillarSombra 3s infinite ease-in-out, flotar 5s infinite ease-in-out;
+    will-change: transform, box-shadow; /* Optimización para animaciones */
 }
+
+
+
+.platform-card h3,a{
+    color: #121619 !important;
+}
+
+.platform-card a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #DBB78A;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, rgba(0,0,0,0.75), rgba(255,255,255,0.75));
+}
+
+.platform-card a:hover {
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.5);
+    border-image-source: linear-gradient(to right, rgba(0,0,0,0.9), rgba(255,255,255,0.9));
+}
+
+
 
 @media (max-width: 399px) {
     /* Aquí puedes ajustar estilos específicos para pantallas más pequeñas */
@@ -108,8 +159,8 @@
 }
 
 .platform-logo {
-    width: 80px; /* Adjust size as needed */
-    height: 80px; /* Adjust size as needed */
+    width: 90px; /* Adjust size as needed */
+    height: 90px; /* Adjust size as needed */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -135,3 +186,14 @@
 }
 
 /* Add additional styling as necessary */
+
+
+@media (min-width: 1367px) {
+
+    .platforms-header h2{
+        opacity: 1;
+        font-size: 35px;
+      padding-right: 200px;
+    }
+
+}
