@@ -38,30 +38,97 @@
 
         </div>
 
+
+
+
+<style>
+.nav-icon-container, .nav-links {
+    display: flex; /* Cambio importante aquí */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle {
+    display: none; /* Solo se muestra en móviles */
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-icon-container, .nav-links {
+        display: none; /* Se ocultan por defecto en móviles */
+    }
+
+    .nav-icon-container.active, .nav-links.active {
+        display: flex; /* Se muestran cuando están activos */
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 999;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links li {
+        display: block; /* Asegúrate de que cada li sea visible */
+        padding: 15px 0; /* Espaciado para tocar/tap */
+    }
+}
+
+</style>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('mobile-menu');
+    const navIconContainer = document.querySelector('.nav-icon-container');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', function() {
+        navIconContainer.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+});
+
+
+</script>
+
+
+
+
       
     </header>
     <nav class="navbar">
-        <div class="nav-icon-container">
-            <!-- Ejemplo de íconos para modo celular, reemplaza con los íconos que prefieras -->
-            <span class="nav-icon">🏠</span> <!-- Inicio -->
-            <span class="nav-icon">➖</span> <!-- Retirar -->
-            <span class="nav-icon">➕</span> <!-- Depositar -->
-            <span class="nav-icon">🏦</span> <!-- Mis Bancos -->
-            <span class="nav-icon">📝</span> <!-- Registrar Bancos -->
-            <span class="nav-icon">📜</span> <!-- Historial de Retiro -->
-            <span class="nav-icon">🚪</span> <!-- Salir -->
-        </div>
-        <ul class="nav-links">
-            <!-- Añade un par de elementos para cada acción, ocultando uno en modo celular y otro en modo escritorio -->
-            <li>Inicio</li>
-            <li>Retirar</li>
-            <li>Depositar</li>
-            <li>Mis Bancos</li>
-            <li>Registrar Bancos</li>
-            <li>Historial de Retiro</li>
-            <li>Salir</li>
-        </ul>
-    </nav>
+      <div class="menu-toggle" id="mobile-menu">
+          <span class="fas fa-bars"></span>
+          <span class="menu-text">MENU</span>
+      </div>
+      <div class="nav-icon-container">
+          <!-- Íconos aquí -->
+      </div>
+      <ul class="nav-links">
+          <li>Inicio</li>
+          <li>Retirar</li>
+          <li>Depositar</li>
+          <li>Mis Bancos</li>
+          <li>Registrar Bancos</li>
+          <li>Historial de Retiro</li>
+          <li>Salir</li>
+      </ul>
+  </nav>
+  
     <aside class="sidebar"><div class="gradient-text">
         <p>Puedes vender tus tokens, no importa a qué estudio pertenezcas o si eres independiente, también puedes recibir regalos de tus tipers aprovechando las billeteras cripto. La recepción es casi inmediata.</p>
       </div>
